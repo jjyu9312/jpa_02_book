@@ -1,6 +1,8 @@
 package com.springwook.jpa_02_book;
 
 import com.springwook.jpa_02_book.domain.Member;
+import com.springwook.jpa_02_book.domain.Order;
+import com.springwook.jpa_02_book.domain.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,7 +20,16 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Order order = new Order();
+            order.addOrderItem(new OrderItem());
+            em.persist(order);
 
+            /* 아래와 같은 방식으로 단 방향만으로도 설계 충분히 가능
+            Order order = new Order();
+            em.persist(order);
+            OrderItem orderItem = new OrderItem();
+            orderItem.setOrder(order);
+             */
             System.out.println("커밋");
             tx.commit();
 
