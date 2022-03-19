@@ -30,7 +30,7 @@ public class JpaMain {
             OrderItem orderItem = new OrderItem();
             orderItem.setOrder(order);
              */
-            System.out.println("커밋");
+            System.out.println("commit");
             tx.commit();
 
         } catch (Exception e) {
