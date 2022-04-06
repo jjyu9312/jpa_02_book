@@ -20,9 +20,9 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Order order = new Order();
-            order.addOrderItem(new OrderItem());
-            em.persist(order);
+//            Order order = new Order();
+//            order.addOrderItem(new OrderItem());
+//            em.persist(order);
 
             /* 아래와 같은 방식으로 단 방향만으로도 설계 충분히 가능
             Order order = new Order();
